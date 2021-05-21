@@ -11,6 +11,7 @@ export class ModeService {
   displayBar = true;
   modifyiedHotspot: Hotspot = null;
   soundType="import";
+  choiceDrawing = '';
 
   constructor() {
   }

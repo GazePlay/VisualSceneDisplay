@@ -11,6 +11,12 @@ export class ScenesService {
   SCENES: Array<Scene> = [];
   openRequest;
 
+  nameHotspot = '';
+  colorHotspot = '';
+  soundHotspot = '';
+
+  haveAddHotspot = false;
+
   constructor(public modeService: ModeService,
               public settingsService: SettingsService) {
     this.init();
@@ -46,6 +52,18 @@ export class ScenesService {
       hotspots: Array<Hotspot>()
     });
     this.update();
+  }
+
+  checkNames(scene, image, name){
+    let check = true;
+    if(scene != undefined && image != undefined){
+      this.SCENES[scene].images[image].hotspots.forEach(x => {
+        if(name.toUpperCase() == x.name.toUpperCase()){
+          check = false;
+        }
+      });
+    }
+    return check;
   }
 
   canvasSave(selectedScene: number, selectedImage: number, canvasData: string) {
@@ -149,6 +167,7 @@ export class ScenesService {
         base64sound
       });
     }
+    this.haveAddHotspot = true;
     this.update();
   }
 

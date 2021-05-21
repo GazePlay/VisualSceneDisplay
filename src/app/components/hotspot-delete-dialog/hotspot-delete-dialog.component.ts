@@ -41,7 +41,10 @@ export class HotspotDeleteDialogComponent implements OnInit {
     if (this.selectedScene != undefined && this.selectedImage != undefined) {
       this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots =
         this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots.filter(x => {
-          return x !== this.hotspot
+          if ((x.name !== this.hotspot.name) && (x.name !== this.hotspot.name.concat('', 'Center'))){
+            return x;
+          }
+          //return x !== this.hotspot
         });
     }
   }

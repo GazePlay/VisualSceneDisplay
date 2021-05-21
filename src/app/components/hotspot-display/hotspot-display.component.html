@@ -4,6 +4,7 @@
     [attr.height]="height"
     [attr.width]="width"
   >
+    <text id="textCenter" class="hideText" x="" y="" font-size="20px"></text>
     <polygon *ngFor="let hotspot of getHotspots()"
              [attr.fill]="hotspot.strokeColor"
              fill-opacity="0.0"
@@ -11,9 +12,9 @@
              [attr.points]="this.getPoints(hotspot)"
              stroke-width="2"
              (mouseenter)="enterEvent($event,hotspot)"
-             (mouseleave)="leaveEvent($event)"
+             (mouseleave)="leaveEvent($event, hotspot)"
              (touchenter)="enterEvent($event,hotspot)"
-             (touchleave)="leaveEvent($event)"
+             (touchleave)="leaveEvent($event, hotspot)"
              (click)="clickEvent($event,hotspot)"
 
              (pointerenter)="enter($event,hotspot)"

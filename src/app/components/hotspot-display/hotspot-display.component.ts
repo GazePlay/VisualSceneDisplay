@@ -92,11 +92,22 @@ export class HotspotDisplayComponent implements OnInit {
   enterEvent(event, hotspot) {
     event.target.setAttribute("fill", hotspot.strokeColor);
     event.target.setAttribute('fill-opacity', "0.5");
+    if (hotspot.name.includes('Center')){
+      let textCenter = document.querySelector('#textCenter');
+      textCenter.textContent = hotspot.name.replace('Center', '');
+      textCenter.setAttribute('x', String(event.offsetX));
+      textCenter.setAttribute('y', String(event.offsetY - 10));
+      textCenter.setAttribute('class', 'showText');
+    }
   };
 
-  leaveEvent(event) {
+  leaveEvent(event, hotspot) {
     event.target.setAttribute("fill", '#000000');
     event.target.setAttribute('fill-opacity', "0.0");
+    if (hotspot.name.includes('Center')){
+      let textCenter = document.querySelector('#textCenter');
+      textCenter.setAttribute('class', 'hideText');
+    }
   };
 
   clickEvent(event, hotspot) {
