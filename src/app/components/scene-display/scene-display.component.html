@@ -88,7 +88,9 @@
                            [height]="this.sceneDisplayService.imageHeigth" class="hotspot"
                            [selectedImage]="this.sceneDisplayService.selectedImage"
                            [selectedScene]="this.sceneDisplayService.selectedScene"></app-hotspot-display>
-      <app-hotspot-create *ngIf="modeService.selectedMode === 'hotspot' && modeService.currentDrawingTool === 'add' "
+      <app-hotspot-create *ngIf="modeService.selectedMode === 'hotspot' && modeService.currentDrawingTool === 'Add' && (modeService.choiceDrawing === 'Polyline' ||
+                                                                                                                        modeService.choiceDrawing === 'Rectangle' ||
+                                                                                                                        modeService.choiceDrawing === 'Circle')"
                           [width]="this.sceneDisplayService.imageWidth" class="hotspot"
                           [height]="this.sceneDisplayService.imageHeigth"
                           [selectedImage]="this.sceneDisplayService.selectedImage"

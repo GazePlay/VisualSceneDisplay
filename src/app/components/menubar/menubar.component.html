@@ -45,10 +45,30 @@
 
     <div class="drawingMode"
          *ngIf="modeService.selectedMode === 'hotspot'">
-      <button [class.selected]="modeService.currentDrawingTool === 'add'"
+      <button [class.selected]="modeService.currentDrawingTool === 'Add'"
               type="button" style="width: 4cm; min-width: 1cm;"
-              (click)="changeColor('add')">Add Hotspot
+              (click)="changeColor('Add')">Add Hotspot
       </button>
+
+      <div class="drawingModeForm"
+           *ngIf="modeService.currentDrawingTool === 'Add' ||
+                  modeService.currentDrawingTool === 'redraw'">
+
+        <button [class.selected]="modeService.choiceDrawing === 'Polyline'"
+                type="button" style="width: 4cm; min-width: 1cm;"
+                (click)="choiceDrawing('Polyline')"> Polyline
+        </button>
+
+        <button [class.selected]="modeService.choiceDrawing === 'Rectangle'"
+                type="button" style="width: 4cm; min-width: 1cm;"
+                (click)="choiceDrawing('Rectangle')"> Rectangle
+        </button>
+
+        <button [class.selected]="modeService.choiceDrawing === 'Circle'"
+                type="button" style="width: 4cm; min-width: 1cm;"
+                (click)="choiceDrawing('Circle')"> Circle
+        </button>
+      </div>
 
       <button [class.selected]="modeService.currentDrawingTool === 'modify' || modeService.currentDrawingTool === 'redraw'"
               type="button" style="width: 4cm; min-width: 1cm;"

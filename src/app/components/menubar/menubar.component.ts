@@ -27,11 +27,17 @@ export class MenubarComponent implements OnInit {
 
   changeMode(mode: string): void {
     this.modeService.currentDrawingTool = '';
+    this.modeService.choiceDrawing = '';
     this.modeService.selectedMode = mode;
   }
 
   changeColor(toolName: string): void {
+    this.modeService.choiceDrawing = '';
     this.modeService.currentDrawingTool = toolName;
+  }
+
+  choiceDrawing(drawingName: string): void {
+    this.modeService.choiceDrawing = drawingName;
   }
 
   async hideShowMenu() {

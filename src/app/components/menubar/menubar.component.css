@@ -152,3 +152,25 @@
   margin: -5px -5px;
 }
 
+.menubar .menu .drawingModeForm {
+  display: flex;
+  column-gap: 5px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+.menubar .menu .drawingModeForm button{
+  display: inline;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 1.3cm;
+  width: 1.3cm;
+  min-width: 1cm;
+  min-height: 1cm;
+  align-self: center;
+  background-color: white;
+}
+
+.drawingModeForm .button .selected{
+  background-color: #e6caa0;
+}
