@@ -63,6 +63,17 @@ export class HotspotModifyDialogComponent implements OnInit {
       this.hotspot.svgPointArray=this.svgPath;
     }
 
+    let nameCenter = this.scenesService.nameHotspot;
+    this.setModifyValues(`${form.value.name}`, `${form.value.color}`, this.selectedSound);
+
+    if (this.scenesService.modeService.currentDrawingTool === 'redraw'){
+      this.deleteOldCenterHotspot();
+      this.scenesService.haveAddHotspot = true;
+    }
+    else {
+      this.modifyCenterHotspot(nameCenter);
+    }
+
     this.modeService.selectedMode = 'hotspot';
     this.modeService.modifyiedHotspot = null;
     this.modeService.currentDrawingTool ='modify';
@@ -97,5 +108,37 @@ export class HotspotModifyDialogComponent implements OnInit {
       console.log('Error: ', error);
     };
     this.error = '';
+  }
+
+  setModifyValues(name, color, sound){
+    this.scenesService.nameHotspot = name;
+    this.scenesService.colorHotspot = color;
+    this.scenesService.soundHotspot = sound;
+  }
+
+  deleteOldCenterHotspot(){
+    if (this.selectedScene != undefined && this.selectedImage != undefined) {
+      this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots =
+        this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots.filter(x => {
+          if (x.name !== this.hotspot.name.concat('', 'Center')){
+            return x;
+          }
+        });
+    }
+  }
+
+  modifyCenterHotspot(nameCenter){
+    this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots =
+      this.scenesService.SCENES[this.selectedScene].images[this.selectedImage].hotspots.filter(x => {
+        if (x.name == nameCenter.concat('', 'Center')){
+          x.name = this.scenesService.nameHotspot.concat('', 'Center');
+          x.strokeColor = this.scenesService.colorHotspot;
+          x.base64sound = this.scenesService.soundHotspot;
+          return x;
+        }
+        else {
+          return x;
+        }
+      });
   }
 }

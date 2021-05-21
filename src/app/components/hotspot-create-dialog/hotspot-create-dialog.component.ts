@@ -72,6 +72,7 @@ export class HotspotCreateDialogComponent implements OnInit {
 
   submit(form) {
       if (this.selectedSound != null && this.audioIsValid()) {
+      this.setValues(`${form.value.name}`, `${form.value.color}`, this.selectedSound);
       this.scenesService.addHotspot(this.selectedScene, this.selectedImage, `${form.value.name}`,
         this.svgPath, `${form.value.color}`, this.selectedSound);
       this.dialogRef.close();
@@ -80,4 +81,9 @@ export class HotspotCreateDialogComponent implements OnInit {
       }
   }
 
+  setValues(name, color, sound){
+    this.scenesService.nameHotspot = name;
+    this.scenesService.colorHotspot = color;
+    this.scenesService.soundHotspot = sound;
+  }
 }
