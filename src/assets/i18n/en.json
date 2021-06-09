@@ -1,0 +1,66 @@
+{
+  "Dashboard":{
+    "Play": "Play",
+    "ManageHotspots": "Manage Hotspots",
+    "ManageScenes": "Manage Scenes",
+    "Draw": "Draw",
+    "Settings": "Settings",
+    "Scene": "Scene",
+    "Image": "Image",
+    "AddHotspot": "Add Hotspot",
+    "ModifyHotspot": "Modify Hotspot",
+    "DeleteHotspot": "Delete Hotspot",
+    "Hide": "Hide",
+    "Remove": "Remove",
+    "Rename": "Rename",
+    "Export": "Export",
+    "Import": "Import",
+    "Erase": "Erase",
+    "Clear": "Clear",
+    "Doyouwanttohidetheimage": "Do you want to hide the image",
+    "Doyouconfrimthedeletionoftheimage": "Do you confirm the deletion of the image",
+    "Chooseaname": "Choose a name",
+    "Importscenes": "import scenes",
+    "Cancel": "Cancel",
+    "Doyouwanttohide": "Do you want to hide",
+    "No": "No",
+    "Yes": "Yes",
+    "theimage:": " the image : ",
+    "thescene:": " the scene : ",
+    "Doyouconfirmthedeletionof": "Do you confirm the deletion of ",
+    "Enteraname": "Enter a name"
+  },
+  "Settings": {
+    "DwelltimeEnabled": "Dwell-time Enabled",
+    "DwellTime": "Dwell-Time",
+    "Back": "Back",
+    "Selectalanguage": "Select a language",
+    "French": "French",
+    "English": "English"
+  },
+  "Scene": {
+    "AddScene": "Add Scene",
+    "Enterascenename": "Enter a scene name",
+    "Entertheimagename": "Enter the image name",
+    "Add": "Add",
+    "Cancel": "Cancel"
+  },
+  "Image": {
+    "AddImage": "Add Image",
+    "Entertheimagename": "Enter the image name",
+    "Add": "Add",
+    "Cancel": "Cancel"
+  },
+  "Tutorial": {
+    "Howworkthisapp?": "How work this app?",
+    "CreateaScene": "Create a Scene",
+    "clickontheplusandfillthedifferentareas": "You have to click on the plus and fill the different areas",
+    "ManageScenes": "Manage Scenes",
+    "Youcanmanagetheexistingscenesbyclickingonthebuttonatthetop\"Managescenes\"": "You can manage the existing scenes by clicking on the button at the top \"Manage Scenes\"",
+    "ManageHotspots": "Manage Hotspots",
+    "OnasceneyoucanaddHotspotsallowyoutoplaymusic,clickonthebuttonatthetop\"ManageHotspots\"addHotspot,drawanareaontheimageandfillthedifferentareas.": "On a scene you can add Hotspots allow you to play music, click on the button at the top \"Manage Hotspots\" add Hotspot, draw an area on the image and fill the different areas.",
+    "Whenyouwillclickonthehotspotyouwillhearthesongrecordedorimported": "When you will click on the hotspot you will hear the song recorded or imported",
+    "Drawontheimage": "Draw on the image",
+    "Youcandrawontheimagebyclickingonthebuttonatthetop\"Draw\",chooseyourcolorandclickontheimage": "You can draw on the image by clicking on the button at the top \"Draw\", choose your color and click on the image"
+  }
+}

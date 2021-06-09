@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ScenesService} from '../../services/scenes.service';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-add-scene-dialog',
@@ -16,7 +17,8 @@ export class AddSceneDialogComponent implements OnInit {
   constructor(
     private scenesService: ScenesService,
     private formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<AddSceneDialogComponent>
+    private dialogRef: MatDialogRef<AddSceneDialogComponent>,
+    public languageService: LanguageService
   ) {
   }
 

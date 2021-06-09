@@ -1,13 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit(form)" class="rename-dialog">
-  <h1 mat-dialog-title>Choose a name</h1>
+  <h1 mat-dialog-title>{{'Dashboard.Chooseaname' | translate}}</h1>
   <mat-dialog-content>
     <mat-form-field>
-      <input matInput formControlName="name" placeholder="Enter a name" id="nameInput">
+      <input matInput formControlName="name" placeholder="{{'Dashboard.Enteraname' | translate}}" id="nameInput">
     </mat-form-field>
     <br>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button type="submit">Rename</button>
-    <button mat-button type="button" mat-dialog-close>Cancel</button>
+    <button mat-button type="submit">{{'Dashboard.Rename' | translate}}</button>
+    <button mat-button type="button" mat-dialog-close>{{'Dashboard.Cancel' | translate}}</button>
   </mat-dialog-actions>
 </form>
