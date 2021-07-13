@@ -4,6 +4,7 @@ import {ModeService} from "../../services/mode.service";
 import {SceneDisplayService} from "../../services/scene-display.service";
 import {ScenesService} from "../../services/scenes.service";
 import {AudioRecorderService} from "../../services/audio-recorder.service";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-menubar',
@@ -88,7 +89,8 @@ export class MenubarComponent implements OnInit {
   constructor(public modeService: ModeService,
               public scenesService: ScenesService,
               public audioRecorderService: AudioRecorderService,
-              public sceneDisplayService: SceneDisplayService) {
+              public sceneDisplayService: SceneDisplayService,
+              public languageService: LanguageService) {
   }
 
   ngOnInit(): void {

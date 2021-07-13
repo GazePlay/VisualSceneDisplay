@@ -1,10 +1,10 @@
 <form [formGroup]="form" (ngSubmit)="submit(form)" class="import-scenes-dialog">
-  <h1 mat-dialog-title>Modify hotspot</h1>
+  <h1 mat-dialog-title>{{'Hotspot.Modifyhotspot' | translate}}</h1>
   <mat-dialog-content>
-    <label style="font: menu;font-family: inherit;color: darkgray;"> Add the sound</label>
+    <label style="font: menu;font-family: inherit;color: darkgray;">{{'Hotspot.Addthesound' | translate}}</label>
     <mat-dialog-actions style="display: grid;grid-template-columns: 1fr 1fr; margin-bottom: .25em;">
-      <button mat-button type="button" style="border: lightgray 2px solid;" [class.selected]="this.modeService.soundType==='import'" (click)="this.modeService.soundType='import'" >Import a sound</button>
-      <button mat-button type="button" style="border: lightgray 2px solid;" [class.selected]="this.modeService.soundType==='record'" (click)="this.modeService.soundType='record'">Record a sound</button>
+      <button mat-button type="button" style="border: lightgray 2px solid;" [class.selected]="this.modeService.soundType==='import'" (click)="this.modeService.soundType='import'" >{{'Hotspot.Importasound' | translate}}</button>
+      <button mat-button type="button" style="border: lightgray 2px solid;" [class.selected]="this.modeService.soundType==='record'" (click)="this.modeService.soundType='record'">{{'Hotspot.Recordasound' | translate}}</button>
     </mat-dialog-actions>
     <input *ngIf="this.modeService.soundType=='import'" formControlName="soundSelected" type="file" (change)="onSoundSelected($event)" style="margin-top: .50375em;">
     <mat-dialog-actions *ngIf="this.modeService.soundType=='record'" style="display: grid;grid-template-columns: 1fr 1fr 1fr; margin-bottom: .25em;padding: 0;">
@@ -21,27 +21,27 @@
     <div style="display: grid;grid-template-columns: 1fr 1fr; margin-top: 1.50375em;">
       <div>
     <mat-form-field>
-      <mat-select formControlName="color" placeholder="Pick the stroke color" id="colorSelect" ngDefaultControl>
-        <mat-option [value]="'#000000'">Black</mat-option>
-        <mat-option [value]="'#FFFFFF'">White</mat-option>
-        <mat-option [value]="'#0080ff'">Blue</mat-option>
-        <mat-option [value]="'#f34336'">Red</mat-option>
-        <mat-option [value]="'#ff7f00'">Orange</mat-option>
-        <mat-option [value]="'#228b22'">Green</mat-option>
+      <mat-select formControlName="color" placeholder="{{'Hotspot.Pickthestrokecolor' | translate}}" id="colorSelect" ngDefaultControl>
+        <mat-option [value]="'#000000'">{{'Hotspot.Black' | translate}}</mat-option>
+        <mat-option [value]="'#FFFFFF'">{{'Hotspot.White' | translate}}</mat-option>
+        <mat-option [value]="'#0080ff'">{{'Hotspot.Blue' | translate}}</mat-option>
+        <mat-option [value]="'#f34336'">{{'Hotspot.Red' | translate}}</mat-option>
+        <mat-option [value]="'#ff7f00'">{{'Hotspot.Orange' | translate}}</mat-option>
+        <mat-option [value]="'#228b22'">{{'Hotspot.Green' | translate}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="name" placeholder="Enter the name of the hotspot" id="nameInput">
+      <input matInput formControlName="name" placeholder="{{'Hotspot.Enterthenameofthehotspot' | translate}}" id="nameInput">
     </mat-form-field>
       </div>
       <mat-button-toggle id="redraw" style="margin: 0 0 10% 10%; border: lightgray 2px solid;"  mat-dialog-close (click)="redraw()">
-        redraw
+        {{'Hotspot.redraw' | translate}}
       </mat-button-toggle>
     </div>
   </mat-dialog-content>
   <p *ngIf='error !== ""'>{{error}}</p>
   <mat-dialog-actions style="display: grid;grid-template-columns: 1fr 1fr;">
-    <button mat-button type="submit" >Modify</button>
-    <button mat-button type="button" (click)="close()" mat-dialog-close>Cancel</button>
+    <button mat-button type="submit" >{{'Hotspot.Modify' | translate}}</button>
+    <button mat-button type="button" (click)="close()" mat-dialog-close>{{'Hotspot.Cancel' | translate}}</button>
   </mat-dialog-actions>
 </form>

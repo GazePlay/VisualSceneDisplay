@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -22,12 +22,17 @@ import { ImportScenesDialogComponent } from './components/import-scenes-dialog/i
 import { HotspotCreateComponent } from './components/hotspot-create/hotspot-create.component';
 import { HotspotCreateDialogComponent } from './components/hotspot-create-dialog/hotspot-create-dialog.component';
 import { HotspotDisplayComponent } from './components/hotspot-display/hotspot-display.component';
-import {HotspotModifyDialogComponent} from "./components/hotspot-modify-dialog/hotspot-modify-dialog.component";
+import {HotspotModifyDialogComponent} from './components/hotspot-modify-dialog/hotspot-modify-dialog.component';
 import { HotspotDeleteDialogComponent } from './components/hotspot-delete-dialog/hotspot-delete-dialog.component';
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { DwellCursorComponent } from './components/dwell-cursor/dwell-cursor.component';
 import { SettingsComponent } from './components/settings/settings.component';
-
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +54,13 @@ import { SettingsComponent } from './components/settings/settings.component';
     SettingsComponent,
   ],
     imports: [
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient],
+        }
+      }),
         FormsModule,
         BrowserModule,
         AppRoutingModule,
@@ -61,7 +73,8 @@ import { SettingsComponent } from './components/settings/settings.component';
         MatTableModule,
         MatButtonModule,
         MatSelectModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent],

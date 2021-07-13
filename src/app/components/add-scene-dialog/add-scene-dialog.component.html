@@ -1,18 +1,18 @@
 <form [formGroup]="form" (ngSubmit)="submit(form)">
-  <h1 mat-dialog-title>Add scene</h1>
+  <h1 mat-dialog-title>{{'Scene.AddScene' | translate}}</h1>
   <mat-dialog-content>
     <mat-form-field>
-      <input matInput formControlName="scenename" placeholder="Enter a scene name">
+      <input matInput formControlName="scenename" placeholder="{{'Scene.Enterascenename' | translate}}">
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input matInput formControlName="firstimagename" placeholder="Enter the image name">
+      <input matInput formControlName="firstimagename" placeholder="{{'Scene.Entertheimagename' | translate}}">
     </mat-form-field>
     <br>
     <input type="file" accept="image/*" (change)="onFileSelected($event)">
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button type="submit">Add</button>
-    <button mat-button type="button" mat-dialog-close>Cancel</button>
+    <button mat-button type="submit">{{'Scene.Add' | translate}}</button>
+    <button mat-button type="button" mat-dialog-close>{{'Scene.Cancel' | translate}}</button>
   </mat-dialog-actions>
 </form>

@@ -5,6 +5,7 @@ import {ScenesService} from '../../services/scenes.service';
 import {ModeService} from "../../services/mode.service";
 import {Hotspot} from "../../types";
 import {AudioRecorderService} from "../../services/audio-recorder.service";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-hotspot-create-dialog',
@@ -27,6 +28,7 @@ export class HotspotModifyDialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     public modeService: ModeService,
     public audioRecorderService: AudioRecorderService,
+    public languageService: LanguageService,
     private dialogRef: MatDialogRef<HotspotModifyDialogComponent>
   ) {
   }

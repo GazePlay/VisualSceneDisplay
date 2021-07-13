@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {ScenesService} from '../../services/scenes.service';
 import {ModeService} from "../../services/mode.service";
 import {AudioRecorderService} from "../../services/audio-recorder.service";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-hotspot-create-dialog',
@@ -25,7 +26,8 @@ export class HotspotCreateDialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     public modeService: ModeService,
     public audioRecorderService: AudioRecorderService,
-    private dialogRef: MatDialogRef<HotspotCreateDialogComponent>
+    private dialogRef: MatDialogRef<HotspotCreateDialogComponent>,
+    public languageService: LanguageService
   ) {
   }
 

@@ -1,11 +1,11 @@
 <div class="menuBar">
   <div class="menu">
     <button (click)=back() class="button">
-      Back
+      {{'Settings.Back' | translate}}
     </button>
 
     <div class="title">
-      Settings
+      {{'Dashboard.Settings' | translate}}
     </div>
 
   </div>
@@ -15,14 +15,23 @@
   <div class="images"></div>
   <div class="bigContainer">
     <div class="settings-item">
-      <label for="dwellTimeEnable">Dwell-Time Enabled:</label>
+      <label for="dwellTimeEnable">{{'Settings.DwelltimeEnabled' | translate}}:</label>
       <input [(ngModel)]="this.settingsService.DWELL_TIME_ENABLED" id="dwellTimeEnable" type="checkbox"
       >
     </div>
     <div class="settings-item">
-      <label for="dwellTime">Dwell-Time:</label>
+      <label for="dwellTime">{{'Settings.DwellTime' | translate}}:</label>
       <input [(ngModel)]="this.settingsService.DWELL_TIME_TIMEOUT_VALUE" id="dwellTime" type="text"
       >
+    </div>
+    <div class="settings-item">
+      <mat-form-field  appearance ="fill" >
+        <mat-label > {{'Settings.Selectalanguage' | translate}} </mat-label>
+        <mat-select [(value)] = "selected">
+          <mat-option  value = "fr" (click)="languageService.switchLanguage(selected)"> {{'Settings.French' | translate}} </mat-option>
+          <mat-option  value = "en" (click)="languageService.switchLanguage(selected)"> {{'Settings.English' | translate}} </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 </div>

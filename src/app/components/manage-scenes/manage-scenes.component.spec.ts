@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ManageScenesComponent} from './manage-scenes.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatDialogModule} from '@angular/material/dialog';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ManageScenesComponent', () => {
   let component: ManageScenesComponent;
@@ -9,7 +10,7 @@ describe('ManageScenesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ManageScenesComponent],
-      imports: [MatDialogModule]
+      imports: [MatDialogModule, TranslateModule.forRoot()]
     })
       .compileComponents();
   }));

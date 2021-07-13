@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {ConfirmationDialogComponent} from '../confirmation-dialog/confirmation-dialog.component';
 import {RenameDialogComponent} from '../rename-dialog/rename-dialog.component';
 import {ImportScenesDialogComponent} from '../import-scenes-dialog/import-scenes-dialog.component';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-manage-scenes',
@@ -18,7 +19,8 @@ export class ManageScenesComponent implements OnInit {
   @Output() updateScenes = new EventEmitter<string>();
 
   constructor(private scenesService: ScenesService,
-              private dialog: MatDialog) {
+              private dialog: MatDialog,
+              public languageService: LanguageService) {
   }
 
   ngOnInit(): void {

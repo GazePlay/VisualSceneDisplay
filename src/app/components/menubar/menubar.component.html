@@ -6,25 +6,25 @@
     <button (click)="changeMode('play')"
             class="button"
             [class.selected]="modeService.selectedMode === 'play'">
-      Play
+      {{'Dashboard.Play' | translate}}
     </button>
 
     <button (click)="changeMode('hotspot')"
             class="button"
             [class.selected]="modeService.selectedMode === 'hotspot'">
-      Manage Hotspots
+      {{'Dashboard.ManageHotspots' | translate}}
     </button>
 
     <button (click)="changeMode('manage-scenes')"
             class="button"
             [class.selected]="modeService.selectedMode === 'manage-scenes'">
-      Manage Scenes
+      {{'Dashboard.ManageScenes' | translate}}
     </button>
 
     <button (click)="changeMode('draw')"
             class="button"
             [class.selected]="modeService.selectedMode === 'draw'">
-      Draw
+      {{'Dashboard.Draw' | translate}}
     </button>
 
     <div class="drawingMode"
@@ -35,11 +35,11 @@
               (click)="changeColor(color.name)">
       </button>
       <button type="button"
-              (click)="changeColor('erase')">Erase
+              (click)="changeColor('erase')">{{'Dashboard.Erase' | translate}}
       </button>
 
       <button type="button"
-              (click)="changeColor('clear')">Clear
+              (click)="changeColor('clear')">{{'Dashboard.Clear' | translate}}
       </button>
     </div>
 
@@ -47,17 +47,17 @@
          *ngIf="modeService.selectedMode === 'hotspot'">
       <button [class.selected]="modeService.currentDrawingTool === 'add'"
               type="button" style="width: 4cm; min-width: 1cm;"
-              (click)="changeColor('add')">Add Hotspot
+              (click)="changeColor('add')">{{'Dashboard.AddHotspot' | translate}}
       </button>
 
       <button [class.selected]="modeService.currentDrawingTool === 'modify' || modeService.currentDrawingTool === 'redraw'"
               type="button" style="width: 4cm; min-width: 1cm;"
-              (click)="changeColor('modify')">Modify Hotspot
+              (click)="changeColor('modify')">{{'Dashboard.ModifyHotspot' | translate}}
       </button>
 
       <button [class.selected]="modeService.currentDrawingTool === 'delete'"
               type="button" style="width: 4cm; min-width: 1cm;"
-              (click)="changeColor('delete')">Delete Hotspot
+              (click)="changeColor('delete')">{{'Dashboard.DeleteHotspot' | translate}}
       </button>
     </div>
 
@@ -66,7 +66,7 @@
            *ngIf="modeService.selectedMode === 'play'"/>
 
     <a routerLink="/settings" [ngStyle]="{'margin-left': modeService.selectedMode === 'manage-scenes' ? 'auto' : '0'}" >
-      Settings
+      {{'Dashboard.Settings' | translate}}
     </a>
 
   </div>

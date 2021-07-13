@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ScenesService} from '../../services/scenes.service';
+import {LanguageService} from '../../services/language.service';
 
 @Component({
   selector: 'app-add-image-dialog',
@@ -17,7 +18,8 @@ export class AddImageDialogComponent implements OnInit {
   constructor(
     private scenesService: ScenesService,
     private formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<AddImageDialogComponent>
+    private dialogRef: MatDialogRef<AddImageDialogComponent>,
+    public languageService: LanguageService
   ) {
   }
 

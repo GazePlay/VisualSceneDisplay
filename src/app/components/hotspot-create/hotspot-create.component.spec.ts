@@ -2,6 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HotspotCreateComponent} from './hotspot-create.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('HotspotCreateComponent', () => {
   let component: HotspotCreateComponent;
@@ -10,7 +11,7 @@ describe('HotspotCreateComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HotspotCreateComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, TranslateModule.forRoot()],
       providers: [
         {
           provide: MatDialogRef,
